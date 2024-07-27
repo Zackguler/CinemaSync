@@ -34,7 +34,5 @@ final class MovieSearchCoordinator: BaseCoordinator {
     
     func setRootViewController() {
          self._rootViewController = MovieSearchViewController()
-        navigationController.pushViewController(rootViewController, animated: true)
-        
     }
 }
