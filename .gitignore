@@ -1,6 +1,7 @@
 # Xcode ile ilgili geçici dosyalar
 *.xcuserdata
 *.xcworkspace
+xcschememanagement.plist
 DerivedData/
 build/
 Pods/
