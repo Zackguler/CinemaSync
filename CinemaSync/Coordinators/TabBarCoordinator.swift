@@ -13,7 +13,6 @@ final class TabBarCoordinator: BaseCoordinator {
     
     private lazy var tabBarController: MainTabbarController = {
         let tabBarVC = MainTabbarController()
-        tabBarVC.tabbarDelegate = self
         return tabBarVC
     }()
     
@@ -66,14 +65,4 @@ final class TabBarCoordinator: BaseCoordinator {
         self.tabBarController.viewControllers = newCoordinators.map { $0.rootViewController }
         self.tabCoordinators = newCoordinators
     }
-}
-
-extension TabBarCoordinator: TabbarDelegate {
-     func indexWillChange() {
-          guard let navigation = self.tabBarController.selectedViewController as? UINavigationController else { return }
-     }
-     
-     func indexDidChange() {
-          guard let navigation = self.tabBarController.selectedViewController as? UINavigationController else { return }
-     }
 }

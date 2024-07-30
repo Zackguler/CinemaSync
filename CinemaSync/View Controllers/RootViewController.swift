@@ -10,9 +10,9 @@ import UIKit
 final class RootViewController: UIViewController {
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
+        if #available(iOS 13.0, *) {
+            return .darkContent
+        }
         return .lightContent
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
 }

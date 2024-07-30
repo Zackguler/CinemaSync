@@ -31,7 +31,8 @@ open class BaseCoordinator: NSObject, AnyCoordinator {
     }
     
     final func remove(child: AnyCoordinator) {
-        guard let index = children.firstIndex(where: {$0 === child}) else { return }
+        guard let index = children.firstIndex(where: { $0 === child }) else { return }
+        children.remove(at: index)
     }
     
     func removeAllChildren() {

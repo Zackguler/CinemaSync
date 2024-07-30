@@ -13,7 +13,6 @@ protocol ChildPresenter {
      func afterFullScreen()
      func removeFullScreen(child: UIViewController)
      func afterRemoveScreen()
-     var hasNavBar: Bool { get }
 }
 
 extension ChildPresenter {
@@ -42,11 +41,5 @@ extension ChildPresenter {
                return navigation
           }
           return UINavigationController()
-     }
-
-     var hasNavBar : Bool {
-          get {
-               return false
-          }
      }
 }

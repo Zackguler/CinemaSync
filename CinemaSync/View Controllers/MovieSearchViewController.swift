@@ -12,13 +12,21 @@ class MovieSearchViewController: UIViewController {
         let view = UIView()
         return view
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         view.addSubview(mainView)
         mainView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+        Task {
+            do {
+                let movies = try await Current.client.fetchUpcomingMovies()
+                print(movies)
+            } catch {
+                print("Failed to fetch movies: \(error)")
+            }
         }
     }
 }
