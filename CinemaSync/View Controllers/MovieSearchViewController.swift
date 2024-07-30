@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class MovieSearchViewController: UIViewController {
     private lazy var mainView: UIView = {

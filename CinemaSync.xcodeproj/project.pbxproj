@@ -14,9 +14,6 @@
 		A13BD7C62C553250001CD493 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13BD7C52C553250001CD493 /* TabBarCoordinator.swift */; };
 		A13BD7C82C5532CC001CD493 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13BD7C72C5532CC001CD493 /* MainTabbarController.swift */; };
 		A13BD7CA2C55360A001CD493 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13BD7C92C55360A001CD493 /* HomeCoordinator.swift */; };
-		A13BD7CE2C553B60001CD493 /* ChildPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13BD7CD2C553B60001CD493 /* ChildPresenter.swift */; };
-		A13BD7D02C553B7E001CD493 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A13BD7CF2C553B7E001CD493 /* SnapKit */; };
-		A13BD7D22C553B7E001CD493 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = A13BD7D12C553B7E001CD493 /* SnapKit-Dynamic */; };
 		A1D2D2312C5541C800B568D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D2D2302C5541C800B568D4 /* SceneDelegate.swift */; };
 		A1D2D2332C5545EE00B568D4 /* MovieSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D2D2322C5545EE00B568D4 /* MovieSearchCoordinator.swift */; };
 		A1D2D2352C58550800B568D4 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D2D2342C58550800B568D4 /* Environment.swift */; };
@@ -24,6 +21,8 @@
 		A1D2D23A2C58574700B568D4 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D2D2392C58574700B568D4 /* Movies.swift */; };
 		A1D2D23C2C58585D00B568D4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D2D23B2C58585D00B568D4 /* NetworkService.swift */; };
 		A1D2D23E2C586A2F00B568D4 /* UpcomingMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D2D23D2C586A2F00B568D4 /* UpcomingMovies.swift */; };
+		A1D2D2462C58761400B568D4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A1D2D2452C58761400B568D4 /* SnapKit */; };
+		A1D2D2482C58761400B568D4 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = A1D2D2472C58761400B568D4 /* SnapKit-Dynamic */; };
 		A1D6E6252C5469E50087B1A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E6242C5469E50087B1A8 /* AppDelegate.swift */; };
 		A1D6E6292C5469E50087B1A8 /* MovieSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E6282C5469E50087B1A8 /* MovieSearchViewController.swift */; };
 		A1D6E62F2C5469E50087B1A8 /* CinemaSync.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1D6E62D2C5469E50087B1A8 /* CinemaSync.xcdatamodeld */; };
@@ -39,7 +38,6 @@
 		A13BD7C52C553250001CD493 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		A13BD7C72C5532CC001CD493 /* MainTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
 		A13BD7C92C55360A001CD493 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
-		A13BD7CD2C553B60001CD493 /* ChildPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildPresenter.swift; sourceTree = "<group>"; };
 		A1D2D2302C5541C800B568D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A1D2D2322C5545EE00B568D4 /* MovieSearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchCoordinator.swift; sourceTree = "<group>"; };
 		A1D2D2342C58550800B568D4 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -61,8 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A13BD7D02C553B7E001CD493 /* SnapKit in Frameworks */,
-				A13BD7D22C553B7E001CD493 /* SnapKit-Dynamic in Frameworks */,
+				A1D2D2462C58761400B568D4 /* SnapKit in Frameworks */,
+				A1D2D2482C58761400B568D4 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +101,6 @@
 		A13BD7CC2C553B54001CD493 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				A13BD7CD2C553B60001CD493 /* ChildPresenter.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -212,8 +209,8 @@
 			);
 			name = CinemaSync;
 			packageProductDependencies = (
-				A13BD7CF2C553B7E001CD493 /* SnapKit */,
-				A13BD7D12C553B7E001CD493 /* SnapKit-Dynamic */,
+				A1D2D2452C58761400B568D4 /* SnapKit */,
+				A1D2D2472C58761400B568D4 /* SnapKit-Dynamic */,
 			);
 			productName = CinemaSync;
 			productReference = A1D6E6212C5469E50087B1A8 /* CinemaSync.app */;
@@ -245,7 +242,7 @@
 			mainGroup = A1D6E6182C5469E50087B1A8;
 			packageReferences = (
 				A13BD7B32C54898D001CD493 /* XCRemoteSwiftPackageReference "SwiftLint" */,
-				A13BD7B62C548F61001CD493 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				A1D2D2442C58761400B568D4 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = A1D6E6222C5469E50087B1A8 /* Products */;
 			projectDirPath = "";
@@ -300,7 +297,6 @@
 				A13BD7C82C5532CC001CD493 /* MainTabbarController.swift in Sources */,
 				A1D2D2352C58550800B568D4 /* Environment.swift in Sources */,
 				A1D2D23E2C586A2F00B568D4 /* UpcomingMovies.swift in Sources */,
-				A13BD7CE2C553B60001CD493 /* ChildPresenter.swift in Sources */,
 				A1D2D23C2C58585D00B568D4 /* NetworkService.swift in Sources */,
 				A1D2D2372C58569E00B568D4 /* ServiceType.swift in Sources */,
 				A1D6E62F2C5469E50087B1A8 /* CinemaSync.xcdatamodeld in Sources */,
@@ -546,7 +542,7 @@
 				minimumVersion = 0.55.1;
 			};
 		};
-		A13BD7B62C548F61001CD493 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		A1D2D2442C58761400B568D4 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -562,14 +558,14 @@
 			package = A13BD7B32C54898D001CD493 /* XCRemoteSwiftPackageReference "SwiftLint" */;
 			productName = "plugin:SwiftLintBuildToolPlugin";
 		};
-		A13BD7CF2C553B7E001CD493 /* SnapKit */ = {
+		A1D2D2452C58761400B568D4 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A13BD7B62C548F61001CD493 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = A1D2D2442C58761400B568D4 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		A13BD7D12C553B7E001CD493 /* SnapKit-Dynamic */ = {
+		A1D2D2472C58761400B568D4 /* SnapKit-Dynamic */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A13BD7B62C548F61001CD493 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = A1D2D2442C58761400B568D4 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
