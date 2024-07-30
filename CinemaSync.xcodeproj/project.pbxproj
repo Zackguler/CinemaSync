@@ -90,21 +90,6 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		A13BD7CB2C553B4D001CD493 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				A13BD7CC2C553B54001CD493 /* Protocols */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		A13BD7CC2C553B54001CD493 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		A1D2D2382C58573E00B568D4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,7 +168,6 @@
 				A1D2D2412C586C0500B568D4 /* Supporting Files */,
 				A1D2D2402C586BEA00B568D4 /* Delegates */,
 				A1D2D23F2C586BCF00B568D4 /* Networking */,
-				A13BD7CB2C553B4D001CD493 /* Helpers */,
 				A1D6E6352C5469E70087B1A8 /* Info.plist */,
 				A1D6E62D2C5469E50087B1A8 /* CinemaSync.xcdatamodeld */,
 			);
