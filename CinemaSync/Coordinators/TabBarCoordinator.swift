@@ -11,8 +11,9 @@ final class TabBarCoordinator: BaseCoordinator {
     
     private lazy var navigationController = UINavigationController()
     
-    private lazy var tabBarController: MainTabbarController = {
-        let tabBarVC = MainTabbarController()
+    private lazy var tabBarController: UITabBarController = {
+        let tabBarVC = UITabBarController()
+        tabBarVC.view.backgroundColor = .white
         return tabBarVC
     }()
     
@@ -60,7 +61,7 @@ final class TabBarCoordinator: BaseCoordinator {
         var newCoordinators: [AnyCoordinator]
         
         let homeCoordinator = HomeCoordinator()
-        homeCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "Movies", image: UIImage(systemName: "film"), tag: 0)
+        homeCoordinator.rootViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
         newCoordinators = [homeCoordinator]
         self.tabBarController.viewControllers = newCoordinators.map { $0.rootViewController }
         self.tabCoordinators = newCoordinators
