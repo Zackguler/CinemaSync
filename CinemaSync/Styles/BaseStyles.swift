@@ -7,14 +7,14 @@
 
 import UIKit
 
-public func baseLabelStyle(_ label: UILabel, withFontSize fontSize: CGFloat = 16, color: UIColor? = nil, newFont: Bool = false) {
+public func baseLabelStyle(_ label: UILabel, withFontSize fontSize: CGFloat = 16, color: UIColor? = nil) {
      label.textColor = color ?? .black
      label.backgroundColor = .clear
      label.font = UIFont.regularInter(ofSize: fontSize)
      label.adjustsFontSizeToFitWidth = true
 }
 
-public func baseBoldLabelStyle(_ label: UILabel, withFontSize fontSize: CGFloat = 16, color: UIColor? = nil, newFont: Bool = false) {
+public func baseBoldLabelStyle(_ label: UILabel, withFontSize fontSize: CGFloat = 16, color: UIColor? = nil) {
      label.textColor = color ?? .black
      label.backgroundColor = .clear
      label.font = UIFont.boldInter(ofSize: fontSize)

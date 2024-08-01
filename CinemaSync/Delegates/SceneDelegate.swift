@@ -85,9 +85,33 @@ extension UIViewController {
             self.applyStyles()
             self.hasViewAppeared = true
         }
+        
+        if parent is UINavigationController {
+            if let firstChild = childForHidesNavigationBarWhenPushed {
+                var nextChild: UIViewController? = firstChild
+                var hidesNavigationBar = firstChild.hidesNavigationBarWhenPushed
+
+                while nextChild != nil {
+                    hidesNavigationBar = nextChild!.hidesNavigationBarWhenPushed
+                    nextChild = nextChild!.childForHidesNavigationBarWhenPushed
+                }
+                navigationController?.setNavigationBarHidden(hidesNavigationBar, animated: animated)
+
+            } else {
+                navigationController?.setNavigationBarHidden(hidesNavigationBarWhenPushed, animated: animated)
+            }
+        }
     }
     
     @objc open func applyStyles() {
+    }
+    
+    @objc open var childForHidesNavigationBarWhenPushed: UIViewController? {
+        return nil
+    }
+    
+    @objc open var hidesNavigationBarWhenPushed: Bool {
+        return true
     }
     
     private struct AssociatedKeys {
