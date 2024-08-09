@@ -44,9 +44,10 @@ final class HomeViewCoordinator: BaseCoordinator {
                 let viewModel = HomeViewModel(topRatedMovies: topRatedMovies.results,
                                               popularMovies: popularMovies.results,
                                               upcomingMovies: upcomingMovies.results)
-                let homeVC = await HomeViewController(viewModel: viewModel)
-                self._rootViewController = homeVC
-                DispatchQueue.main.async {
+                await MainActor.run {
+                    let homeVC = HomeViewController(viewModel: viewModel)
+                    homeVC.coordinator = self
+                    self._rootViewController = homeVC
                     self.navigationController.viewControllers = [homeVC]
                 }
             } catch {
@@ -71,6 +72,19 @@ final class HomeViewCoordinator: BaseCoordinator {
             self.loadingIndicator?.stopAnimating()
             self.loadingIndicator?.removeFromSuperview()
             self.loadingIndicator = nil
+        }
+    }
+}
+
+extension HomeViewCoordinator: HomeViewControllerDelegate {
+    func didTapSeeAll(_ cell: MoviesSectionsCell, for section: MoviesSections) {
+        switch section {
+        case .popular:
+            print("popular")
+        case .topRated:
+            print("top rated")
+        case .upcoming:
+            print("upcoming")
         }
     }
 }

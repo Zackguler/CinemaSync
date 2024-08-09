@@ -8,11 +8,18 @@
 import UIKit
 import SnapKit
 
+protocol HomeViewControllerDelegate: AnyObject {
+    func didTapSeeAll(_ cell: MoviesSectionsCell, for section: MoviesSections)
+}
+
 class HomeViewController: UIViewController {
+    
+    public typealias Coordinator = HomeViewControllerDelegate
     
     //    MARK: - Variables
     
     var viewModel: HomeViewModel
+    public weak var coordinator: Coordinator?
     
     //    MARK: - UI Elements
     
@@ -86,12 +93,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         let movies = viewModel.cellForRowAt(for: section)
-        cell.configure(with: movies)
+        cell.configure(with: movies, section: section)
         cell.setTitle(section.title)
+        cell.delegate = coordinator
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
     }
 }

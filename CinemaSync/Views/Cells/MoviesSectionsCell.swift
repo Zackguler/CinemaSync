@@ -11,6 +11,10 @@ class MoviesSectionsCell: UITableViewCell {
     
     private var movies: [Movie] = []
     
+    private var section: MoviesSections?
+    
+    weak var delegate: HomeViewControllerDelegate?
+    
     // MARK: - UI Elements
     
     private lazy var titleLabel: UILabel = {
@@ -21,6 +25,9 @@ class MoviesSectionsCell: UITableViewCell {
     private lazy var seeAllLabel: UILabel = {
         let label = UILabel()
         label.text = "See all"
+        label.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(seeAllTapped))
+        label.addGestureRecognizer(tapGesture)
         return label
     }()
     
@@ -48,8 +55,9 @@ class MoviesSectionsCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with movies: [Movie]) {
+    func configure(with movies: [Movie], section: MoviesSections) {
         self.movies = movies
+        self.section = section
         moviesCollectionView.reloadData()
     }
     
@@ -67,6 +75,11 @@ class MoviesSectionsCell: UITableViewCell {
         baseBoldLabelStyle(titleLabel)
         baseBoldLabelStyle(seeAllLabel, withFontSize: 10, color: .systemBlue)
         layout()
+    }
+    
+    @objc private func seeAllTapped() {
+        guard let section = section else { return }
+        delegate?.didTapSeeAll(self, for: section)
     }
 }
 
