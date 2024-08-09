@@ -78,13 +78,7 @@ final class HomeViewCoordinator: BaseCoordinator {
 
 extension HomeViewCoordinator: HomeViewControllerDelegate {
     func didTapSeeAll(_ cell: MoviesSectionsCell, for section: MoviesSections) {
-        switch section {
-        case .popular:
-            print("popular")
-        case .topRated:
-            print("top rated")
-        case .upcoming:
-            print("upcoming")
-        }
+        let coord = SeeAllMoviesCoordinator(navigationController: navigationController, sectionType: section)
+        start(child: coord)
     }
 }
