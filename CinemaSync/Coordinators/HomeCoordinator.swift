@@ -10,7 +10,7 @@ import UIKit
 class HomeCoordinator: BaseCoordinator {
     private lazy var navigationController = UINavigationController()
     
-    var movieSearchCoordinator: HomeViewCoordinator?
+    var homeCoordinator: HomeViewCoordinator?
     
     override func start() {
         super.start()
@@ -22,11 +22,11 @@ class HomeCoordinator: BaseCoordinator {
     }
     
     private func restartCoordinators() {
-        movieSearchCoordinator = HomeViewCoordinator(navigationController: navigationController)
-         if let movieSearchCoordinator = movieSearchCoordinator {
-             movieSearchCoordinator.parent = self
-              navigationController.setViewControllers([movieSearchCoordinator.rootViewController], animated: false)
-              self.start(child: movieSearchCoordinator)
+        homeCoordinator = HomeViewCoordinator(navigationController: navigationController)
+         if let homeCoordinator = homeCoordinator {
+             homeCoordinator.parent = self
+              navigationController.setViewControllers([homeCoordinator.rootViewController], animated: false)
+              self.start(child: homeCoordinator)
          }
     }
 }
