@@ -52,6 +52,7 @@ private var hasSwizzled = false
 
 private func swizzle(_ viewController: UIViewController.Type) {
     let swizzlers = [
+        (#selector(viewController.viewDidLoad), #selector(viewController.devCheck_viewDidLoad)),
         (#selector(viewController.viewWillAppear(_:)), #selector(viewController.devCheck_viewWillAppear(_:)))
     ]
     
@@ -79,6 +80,11 @@ extension UIViewController {
         swizzle(self)
     }
     
+    @objc internal func devCheck_viewDidLoad() {
+        self.devCheck_viewDidLoad()
+        bindViewModel()
+    }
+    
     @objc internal func devCheck_viewWillAppear(_ animated: Bool) {
         self.devCheck_viewWillAppear(animated)
         if !self.hasViewAppeared {
@@ -104,6 +110,9 @@ extension UIViewController {
     }
     
     @objc open func applyStyles() {
+    }
+    
+    @objc open func bindViewModel() {
     }
     
     @objc open var childForHidesNavigationBarWhenPushed: UIViewController? {
